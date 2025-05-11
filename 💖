@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz día Mamá</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffd6d6, #ffb6c1);
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 50px;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .carta {
+      max-width: 600px;
+      margin: 100px auto;
+      background: rgba(0,0,0,0.3);
+      padding: 30px;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz día Mamá 💖</h1>
+  <div class="carta">
+    Mamá, gracias por estar siempre a mi lado, por tu amor infinito y por tu fuerza.
+    Hoy te celebro con todo mi corazón. ¡Te amo muchísimo! 🌷
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script>
+    let angle = 0;
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      noStroke();
+    }
+
+    function draw() {
+      background(255, 182, 193, 50);
+      fill(255, 105, 180, 180);
+      let size = 50 + sin(angle) * 20;
+      ellipse(width / 2, height / 2, size, size);
+      angle += 0.05;
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+  </script>
+</body>
+</html>
